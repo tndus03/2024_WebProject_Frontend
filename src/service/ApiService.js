@@ -48,6 +48,7 @@ export function signin(userDTO) {
 
 export function signout() {
   localStorage.setItem("ACCESS_TOKEN", null);
+  localStorage.setItem("USERNAME", null);
   window.location.href = "/login";
 }
 
