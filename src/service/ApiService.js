@@ -40,18 +40,26 @@ export function signin(userDTO) {
       if (response.token) {
         localStorage.setItem("ACCESS_TOKEN", response.token)
         localStorage.setItem("USERNAME", response.username)
-        window.location.href = "/";
+        window.location.href = "/"
       }  
     }
   )
 }
 
 export function signout() {
-  localStorage.setItem("ACCESS_TOKEN", null);
-  localStorage.setItem("USERNAME", null);
-  window.location.href = "/login";
+  localStorage.setItem("ACCESS_TOKEN", null)
+  localStorage.setItem("USERNAME", null)
+  window.location.href = "/login"
 }
 
 export function signup(userDTO) {
   return call("/auth/signup", "POST", userDTO)
+}
+
+export function toggleFavorite(id) {
+  return call(`/coffee/favorite/${id}`, "PUT", null)
+}
+
+export function getFavorites() {
+  return call("/coffee/favorites", "GET", null)
 }

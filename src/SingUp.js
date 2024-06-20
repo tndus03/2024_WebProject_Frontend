@@ -54,7 +54,7 @@ function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              color="success"
+              sx={{ backgroundColor: '#c9a16b' }}
             >
               계정 생성
             </Button>

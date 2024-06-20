@@ -46,7 +46,7 @@ function Login() {
               autoComplete="current-password" />
           </Grid>
           <Grid item xs={12}>
-            <Button type="submit" fullWidth variant="contained" color="success">
+            <Button type="submit" fullWidth variant="contained" sx={{ backgroundColor: '#c9a16b' }}>
               로그인
             </Button>
           </Grid>
