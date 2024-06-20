@@ -81,19 +81,6 @@ const AddCoffee = (props) => {
     setItem({ title: "", brand: "", beans: "", userId: "", id: "", favorite: false })
   }
 
-  const toggleFavoriteHandler = (id) => {
-    toggleFavorite(id)
-      .then(updatedItem => {
-        setItems(prevItems => prevItems.map(item => item.id === id ? updatedItem : item))
-        setSearchResults(prevItems => prevItems.map(item => item.id === id ? updatedItem : item))
-        return refreshFavorites()
-      })
-      .catch(error => {
-        console.error("Error toggling favorite: ", error)
-        alert("Error toggling favorite. Please try again.")
-      })
-  }
-
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
@@ -171,7 +158,7 @@ const AddCoffee = (props) => {
                         </Typography>
                       </Tooltip>
                       <Typography variant="body2" sx={{ mb: 1 }}>{item.id}</Typography>
-                      <IconButton onClick={() => toggleFavoriteHandler(item.id)}>
+                      <IconButton onClick={() => toggleFavorite(item.id)}> {/* 수정된 부분 */}
                         {item.favorite ? <StarIcon sx={{ color: '#ff0000'}} /> : <StarBorderIcon />}
                       </IconButton>
                     </CardContent>
@@ -213,7 +200,7 @@ const AddCoffee = (props) => {
                           </Typography>
                         </Tooltip>
                         <Typography variant="body2" sx={{ mb: 1 }}>{item.id}</Typography>
-                        <IconButton onClick={() => toggleFavoriteHandler(item.id)}>
+                        <IconButton onClick={() => toggleFavorite(item.id)}> {/* 수정된 부분 */}
                           {item.favorite ? <StarIcon sx={{ color: '#ff0000'}} /> : <StarBorderIcon />}
                         </IconButton>
                       </CardContent>
@@ -242,7 +229,7 @@ const AddCoffee = (props) => {
                           </Typography>
                         </Tooltip>
                         <Typography variant="body2" sx={{ mb: 1 }}>{item.id}</Typography>
-                        <IconButton onClick={() => toggleFavoriteHandler(item.id)}>
+                        <IconButton onClick={() => toggleFavorite(item.id)}> {/* 수정된 부분 */}
                           {item.favorite ? <StarIcon sx={{ color: '#ff0000'}} /> : <StarBorderIcon />}
                         </IconButton>
                       </CardContent>

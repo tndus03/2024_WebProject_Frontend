@@ -73,6 +73,18 @@ function App() {
       .catch(error => console.error('Error retrieving favorites:', error))
   }
 
+  const toggleFavoriteHandler = (id) => {
+    toggleFavorite(id)
+      .then(updatedItem => {
+        setItems(prevItems => prevItems.map(item => item.id === id ? updatedItem : item))
+        refreshFavorites()
+      })
+      .catch(error => {
+        console.error("Error toggling favorite: ", error);
+        alert("Error toggling favorite. Please try again.");
+      });
+  }
+
   const coffeeRows = items.length > 0 && items.map((item) => (
     <CoffeeRow
       key={item.id}
@@ -112,7 +124,7 @@ function App() {
             deleteItem={deleteItem}
             items={items}
             setItems={setItems}
-            toggleFavorite={toggleFavorite}
+            toggleFavorite={toggleFavoriteHandler}
             refreshFavorites={refreshFavorites}
             favorites={favorites}
           />
@@ -126,6 +138,7 @@ function App() {
               <th>beans</th>
               <th>userId</th>
               <th>id</th>
+              <th>favorite</th>
             </tr>
           </thead>
           <tbody>

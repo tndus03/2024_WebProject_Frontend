@@ -9,6 +9,7 @@ const CoffeeRow = ({ item }) => {
       <td>{item.beans}</td>
       <td>{item.userId}</td>
       <td>{item.id}</td>
+      <td>{item.favorite ? "Yes" : "No"}</td>
     </tr>
   );
 }
