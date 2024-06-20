@@ -158,7 +158,7 @@ const AddCoffee = (props) => {
                         </Typography>
                       </Tooltip>
                       <Typography variant="body2" sx={{ mb: 1 }}>{item.id}</Typography>
-                      <IconButton onClick={() => toggleFavorite(item.id)}> {/* 수정된 부분 */}
+                      <IconButton onClick={() => toggleFavorite(item.id)}>
                         {item.favorite ? <StarIcon sx={{ color: '#ff0000'}} /> : <StarBorderIcon />}
                       </IconButton>
                     </CardContent>
@@ -200,7 +200,7 @@ const AddCoffee = (props) => {
                           </Typography>
                         </Tooltip>
                         <Typography variant="body2" sx={{ mb: 1 }}>{item.id}</Typography>
-                        <IconButton onClick={() => toggleFavorite(item.id)}> {/* 수정된 부분 */}
+                        <IconButton onClick={() => toggleFavorite(item.id)}>
                           {item.favorite ? <StarIcon sx={{ color: '#ff0000'}} /> : <StarBorderIcon />}
                         </IconButton>
                       </CardContent>
@@ -229,7 +229,7 @@ const AddCoffee = (props) => {
                           </Typography>
                         </Tooltip>
                         <Typography variant="body2" sx={{ mb: 1 }}>{item.id}</Typography>
-                        <IconButton onClick={() => toggleFavorite(item.id)}> {/* 수정된 부분 */}
+                        <IconButton onClick={() => toggleFavorite(item.id)}>
                           {item.favorite ? <StarIcon sx={{ color: '#ff0000'}} /> : <StarBorderIcon />}
                         </IconButton>
                       </CardContent>
